@@ -11,7 +11,7 @@ namespace Game
 
         static void Main(string[] args)
         {
-
+            Console.Title = "Game Point";
             Random rnd = new Random((int)DateTime.Now.Ticks);
             Console.WriteLine("Input player skin (symbol): ");
             char skin = char.Parse(Console.ReadLine());
