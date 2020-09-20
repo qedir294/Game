@@ -13,7 +13,7 @@ namespace Game
         List<Chest> chests = new List<Chest>();
         public GameArea()
         {
-            clear();
+            Clear();
 
             for (int i = 0; i < StaticParams.N; i++)
             {
@@ -22,12 +22,13 @@ namespace Game
 
             foreach (var wall in walls)
             {
-                while (!is_empty(wall.CoordI, wall.CoordJ))
+                while (!IsEmpty(wall.CoordI, wall.CoordJ))
                 {
                     wall.move();
                 }
-                draw(wall);
+                Draw(wall);
             }
+
             for (int i = 0; i < StaticParams.F; i++)
             {
                 chests.Add(new Chest());
@@ -35,15 +36,15 @@ namespace Game
 
             foreach (var chest in chests)
             {
-                while (!is_empty(chest.CoordI, chest.CoordJ))
+                while (!IsEmpty(chest.CoordI, chest.CoordJ))
                 {
                     chest.move();
                 }
-                draw(chest);
+                Draw(chest);
             }
         }
 
-        public void clear()
+        public void Clear()
         {
             Console.Clear();
 
@@ -63,13 +64,13 @@ namespace Game
                 _gameArea[StaticParams.N - 1, i] = _wallSymbol;
             }
         }
-        public void Test_chest(GamePoint g_a, ref int c)
+        public void TestChest(GamePoint g_a, ref int c)
         {
 
 
             foreach (var chest in chests)
             {
-                if (are_player_chest(chest.CoordI, chest.CoordJ, g_a))
+                if (ArePlayerChest(chest.CoordI, chest.CoordJ, g_a))
                 {
                     chest.deactiveate();
                     c++;
@@ -77,20 +78,20 @@ namespace Game
             }
         }
 
-
-        public void draw_scene()
+        public void DrawScene()
         {
             foreach (var wall in walls)
             {
-                draw(wall);
+                Draw(wall);
             }
             foreach (var chest in chests)
             {
                 if (chest.is_active())
-                    draw(chest);
+                    Draw(chest);
             }
         }
-        public bool are_player_chest(int i, int j, GamePoint g_a)
+
+        public bool ArePlayerChest(int i, int j, GamePoint g_a)
         {
             if (i == g_a.CoordI && j == g_a.CoordJ)
                 return true;
@@ -98,7 +99,7 @@ namespace Game
                 return false;
         }
 
-        public void draw(GamePoint game_point)
+        public void Draw(GamePoint game_point)
         {
             int i = game_point.CoordI;
             int j = game_point.CoordJ;
@@ -107,22 +108,22 @@ namespace Game
             _gameArea[i, j] = skin;
         }
 
-        public bool is_free(int i, int j)
+        public bool IsFree(int i, int j)
         {
             return _gameArea[i, j] == _emptySymbol;
         }
 
-        public bool is_wall(int i, int j)
+        public bool IsWall(int i, int j)
         {
             return _gameArea[i, j] == _wallSymbol;
         }
 
-        public bool is_empty(int i, int j)
+        public bool IsEmpty(int i, int j)
         {
             return _gameArea[i, j] == _emptySymbol;
         }
 
-        public bool is_chest(int i, int j)
+        public bool IsChest(int i, int j)
         {
             foreach (var chest in chests)
             {
@@ -133,7 +134,7 @@ namespace Game
             return false;
         }
 
-        public void print()
+        public void Print()
         {
             for (int i = 0; i < StaticParams.N; i++)
             {

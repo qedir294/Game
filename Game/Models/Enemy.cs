@@ -28,7 +28,7 @@ namespace Game
                 i++;
                 if (i > 10)
                     break;
-            } while (g_a.is_wall(CoordI, CoordJ) || g_a.is_chest(CoordI, CoordJ));
+            } while (g_a.IsWall(CoordI, CoordJ) || g_a.IsChest(CoordI, CoordJ));
         }
     }
 }

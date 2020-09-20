@@ -30,7 +30,7 @@ namespace Game
                 case _KEY_RIGHT: move_right(); break;
             }
 
-            if (g_a.is_wall(CoordI, CoordJ))
+            if (g_a.IsWall(CoordI, CoordJ))
             {
 
                 CoordI = last_i;

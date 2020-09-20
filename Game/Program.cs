@@ -12,7 +12,6 @@ namespace Game
         static void Main(string[] args)
         {
             Console.Title = "Game Point";
-            Random rnd = new Random((int)DateTime.Now.Ticks);
             Console.WriteLine("Input player skin (symbol): ");
             char skin = char.Parse(Console.ReadLine());
 
@@ -30,9 +29,9 @@ namespace Game
             {
                 d = Console.ReadKey().KeyChar;
 
-                game_area.clear();
-                game_area.Test_chest(player, ref c);
-                game_area.draw_scene();
+                game_area.Clear();
+                game_area.TestChest(player, ref c);
+                game_area.DrawScene();
 
                 foreach (var enemy in enemies)
                 {
@@ -43,12 +42,12 @@ namespace Game
 
                 foreach (var enemy in enemies)
                 {
-                    game_area.draw(enemy);
+                    game_area.Draw(enemy);
                 }
 
-                game_area.draw(player);
+                game_area.Draw(player);
 
-                game_area.print();
+                game_area.Print();
 
                 if (c == StaticParams.F)
                 {

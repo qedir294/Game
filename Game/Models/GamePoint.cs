@@ -50,7 +50,12 @@ namespace Game
                 _skin = value;
             }
         }
-        public Random rnd = new Random();
+        static public Random rnd;
+        static GamePoint()
+        {
+            rnd = new Random((int)DateTime.Now.Ticks);
+        }
+
         public GamePoint()
         {
             CoordI = rnd.Next(1, 19);
