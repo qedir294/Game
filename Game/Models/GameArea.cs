@@ -64,20 +64,32 @@ namespace Game
                 _gameArea[StaticParams.N - 1, i] = _wallSymbol;
             }
         }
-        public void TestChest(GamePoint g_a, ref int c)
+        public void TestChest(Player player)
         {
 
 
             foreach (var chest in chests)
             {
-                if (ArePlayerChest(chest.CoordI, chest.CoordJ, g_a))
+                if (ArePlayerChest(chest.CoordI, chest.CoordJ, player))
                 {
                     chest.deactiveate();
-                    c++;
+                
                 }
             }
         }
-
+        public int GetActiveChestCount()
+        {
+            int c = 0;
+            foreach (var chest in chests)
+            {
+                if (chest.is_active())
+                {
+               
+                    c++;
+                }
+            }
+            return c;
+        }
         public void DrawScene()
         {
             foreach (var wall in walls)

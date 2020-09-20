@@ -24,13 +24,12 @@ namespace Game
             }
 
             char d;
-            int a = 0, c = 0;
+            bool isLoose =false;
             do
             {
                 d = Console.ReadKey().KeyChar;
 
                 game_area.Clear();
-                game_area.TestChest(player, ref c);
                 game_area.DrawScene();
 
                 foreach (var enemy in enemies)
@@ -44,12 +43,13 @@ namespace Game
                 {
                     game_area.Draw(enemy);
                 }
+                game_area.TestChest(player);
 
                 game_area.Draw(player);
 
                 game_area.Print();
 
-                if (c == StaticParams.F)
+                if (game_area.GetActiveChestCount() == 0)
                 {
                     Console.WriteLine("You Win");
                     break;
@@ -60,16 +60,18 @@ namespace Game
                     if (player.CoordI == enemy.CoordI && player.CoordJ == enemy.CoordJ)
                     {
 
-                        Console.WriteLine("Game Over!\n");
-                        Console.WriteLine("Press to key to exit...");
-                        a = 1;
+                        Console.WriteLine("You loose!\n");
+                        isLoose = true;
                         break;
                     }
 
                 }
-                if (a == 1)
+                if (isLoose)
                     break;
             } while (true);
+            Console.WriteLine("Game Over!\n");
+            Console.WriteLine("Press to key to exit...");
+            Console.ReadLine();
 
         }
     }
