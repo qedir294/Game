@@ -7,7 +7,7 @@ namespace Game
     class Enemy : GamePoint
     {
 
-        public Enemy() : base()
+        public Enemy()
         {
             Skin = '@';
         }
