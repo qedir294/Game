@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Game
 {
-    class Chest : GamePoint
+    public class Chest : GamePoint
     {
         private bool _activation;
         public Chest() : base()

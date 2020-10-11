@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    class GamePoint
+    public class GamePoint
     {
         private int _coordI;
         public int CoordI

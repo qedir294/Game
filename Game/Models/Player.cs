@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Game
 {
-    class Player : GamePoint
+    public class Player : GamePoint
     {
         private const char _KEY_UP = 'w';
         private const char _KEY_DOWN = 's';

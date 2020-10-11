@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Game
 {
-    class GameArea
+    public class GameArea
     {
         private char[,] _gameArea = new char[StaticParams.N, StaticParams.N];
         private char _emptySymbol = '.';
@@ -46,7 +46,6 @@ namespace Game
 
         public void Clear()
         {
-            Console.Clear();
 
             for (int i = 0; i < StaticParams.N; i++)
             {
@@ -146,17 +145,9 @@ namespace Game
             return false;
         }
 
-        public void Print()
+        public char GetSymbol(int i, int j)
         {
-            for (int i = 0; i < StaticParams.N; i++)
-            {
-                for (int j = 0; j < StaticParams.N; j++)
-                {
-                    Console.Write(_gameArea[i, j]);
-                    Console.Write(' ');
-                }
-                Console.WriteLine();
-            }
+            return _gameArea[i, j];
         }
     }
 }

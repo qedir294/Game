@@ -29,6 +29,7 @@ namespace Game
             {
                 d = Console.ReadKey().KeyChar;
 
+                Console.Clear();
                 game_area.Clear();
                 game_area.DrawScene();
 
@@ -47,7 +48,16 @@ namespace Game
 
                 game_area.Draw(player);
 
-                game_area.Print();
+
+                for (int i = 0; i < StaticParams.N; i++)
+                {
+                    for (int j = 0; j < StaticParams.N; j++)
+                    {
+                        Console.Write(game_area.GetSymbol(i, j));
+                        Console.Write(' ');
+                    }
+                    Console.WriteLine();
+                }
 
                 if (game_area.GetActiveChestCount() == 0)
                 {

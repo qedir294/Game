@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Game
 {
-    class Enemy : GamePoint
+    public class Enemy : GamePoint
     {
 
         public Enemy()

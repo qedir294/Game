@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Game
 {
-    static class StaticParams
+    public static class StaticParams
     {
         public const int N = 20;
         public const int F = 5;

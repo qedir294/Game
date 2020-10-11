@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Game
 {
-    class Wall : GamePoint
+    public class Wall : GamePoint
     {
         public Wall() : base()
         {
