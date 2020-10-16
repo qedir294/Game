@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Game;
+
+
 
 namespace Game
 {
@@ -11,6 +14,7 @@ namespace Game
         private char _wallSymbol = '#';
         List<Wall> walls = new List<Wall>();
         List<Chest> chests = new List<Chest>();
+     
         public GameArea()
         {
             Clear();
@@ -41,9 +45,16 @@ namespace Game
                     chest.move();
                 }
                 Draw(chest);
+                
             }
         }
-
+        public Chest GetChest(int i)
+        {
+            return chests[i];
+        }
+       
+        
+        
         public void Clear()
         {
 
@@ -133,8 +144,19 @@ namespace Game
         {
             return _gameArea[i, j] == _emptySymbol;
         }
+        public bool IsChestSkin(int i, int j)
+        {
+            foreach (var chest in chests)
+            {
+                if (_gameArea[i, j] == chest.Skin)
+                    return true;
+            }
+          
+          return false;
+        }
 
-        public bool IsChest(int i, int j)
+
+        public bool IsChestCoord(int i, int j)
         {
             foreach (var chest in chests)
             {

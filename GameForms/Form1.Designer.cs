@@ -35,14 +35,18 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(100, 100);
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Location = new System.Drawing.Point(133, 81);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 200);
+            this.panel1.Size = new System.Drawing.Size(482, 261);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
             this.timer1.Interval = 2000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
@@ -55,6 +59,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.ResumeLayout(false);
 
         }
