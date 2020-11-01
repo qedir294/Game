@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    public class GamePoint
+    public abstract class GamePoint
     {
         private int _coordI;
         public int CoordI
@@ -98,6 +98,5 @@ namespace Game
                 case 3: move_left(); break;
             }
         }
-
     }
 }

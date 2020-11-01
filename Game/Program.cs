@@ -62,6 +62,7 @@ namespace Game
                 if (game_area.GetActiveChestCount() == 0)
                 {
                     Console.WriteLine("You Win");
+
                     break;
                 }
 

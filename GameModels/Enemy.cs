@@ -10,6 +10,9 @@ namespace Game
         public Enemy()
         {
             Skin = '@';
+
+
+
         }
 
         public void move(GameArea g_a)
